@@ -5,6 +5,9 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 
@@ -24,7 +27,7 @@ server.listen(8080, () => {
   console.log('Server running on http://localhost:8080/');
 });
 
-const MONGO_URL = 'mongodb+srv://bear29ers:bear29ers@cluster0.lkt2mzn.mongodb.net/?retryWrites=true&w=majority';
+const { MONGO_URL } = process.env;
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
