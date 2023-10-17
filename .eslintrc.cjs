@@ -16,6 +16,11 @@ const config = {
   },
   plugins: ['@typescript-eslint'],
   extends: ['eslint:recommended', 'airbnb', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  settings: {
+    'import/resolver': {
+      typescript: { project: './' },
+    },
+  },
   rules: {
     /* eslint */
     'no-unused-vars': 'off',
@@ -25,6 +30,16 @@ const config = {
       {
         selector: 'TSEnumDeclaration',
         message: 'DO NOT DECLARE ENUM',
+      },
+    ],
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
     /* typescript */

@@ -30,6 +30,7 @@
     "eslint": "^8.51.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "nodemon": "^3.0.1",
     "prettier": "^3.0.3",
     "ts-api-utils": "^1.0.3",
