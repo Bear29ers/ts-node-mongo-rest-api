@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type express from 'express';
-import { authentication, random } from 'helpers';
+import { authentication, random } from '../helpers';
 import { createUser, getUserByEmail } from '../db/users';
 
 export const register = async (
