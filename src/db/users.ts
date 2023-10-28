@@ -5,9 +5,9 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true },
   authentication: {
     password: { type: String, required: true, select: false },
+    salt: { type: String, select: false },
+    sessionToken: { type: String, select: false },
   },
-  salt: { type: String, selct: false },
-  sessionToken: { type: String, select: false },
 });
 
 export const UserModel = mongoose.model('User', UserSchema);
@@ -22,4 +22,4 @@ export const getUserBySessionToken = (sessionToken: string) =>
 
 export const createUser = (values: Record<string, any>) => new UserModel(values).save().then((user) => user.toObject());
 export const deleteUserById = (id: string) => UserModel.findOneAndDelete({ _id: id });
-export const updateUserById = (id: string, values: Record<string, any>) => UserModel.findOneAndUpdate(id, values);
+export const updateUserById = (id: any, values: Record<string, any>) => UserModel.findOneAndUpdate(id, values);
